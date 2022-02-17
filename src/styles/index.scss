@@ -1,0 +1,56 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(73,10,132,1) 58%, rgba(0,159,255,1) 100%);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+$base-font-color: #fff;
+
+@mixin box-layout {
+  border: 1px solid $base-font-color;
+  border-radius: 0.3125rem;
+  padding: 1rem;
+}
+
+#root {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-size: 1rem;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 16rem;
+  text-align: center;
+  color: $base-font-color;
+  a {
+    text-decoration: none;
+  }
+  .todo-item {
+    @include box-layout;
+    margin-bottom: 0.5rem;
+    &:hover {
+      box-shadow: 0.125rem 0.125rem;
+    }
+  }
+  .todo-box {
+    @include box-layout;
+    min-height: 20rem;
+    h2 {
+      border-bottom: 1px solid $base-font-color;
+    }
+  }
+}
